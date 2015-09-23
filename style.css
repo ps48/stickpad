@@ -1,0 +1,92 @@
+html,body
+{
+	margin:auto;
+	padding:0px;
+}
+.center
+{
+	text-align: center;
+}
+.rl
+{
+	font-family: 'Roboto', sans-serif;
+}
+.f24
+{
+	font-size: 30px;
+}
+.f20
+{
+	font-size: 2rem;
+}
+.bl
+{
+	color:#2a80b9;
+}
+.gr
+{
+	color:#27ae62;
+}
+.wh
+{
+	color:#FFF;
+}
+#header
+{
+	border-bottom: 3px solid rgba(61,61,61,0.8);
+}
+#usr
+{
+	margin-top: 8px;
+}
+#done
+{
+	background-color: #f7f7f7; 
+}
+#conheader .cardholder
+{
+	min-height: 40px;
+	width: 40%;
+	float: left;
+	color:#FFF;
+	margin: 10px;
+	box-shadow: 0px 0px 3px #3d3d3d;
+	border-radius: 3px;
+	cursor: pointer;
+}
+#done .cardholder
+{
+	min-height: 40px;
+	width: 80%;
+	float: left;
+	background-color: #FFF !important;
+	margin: 10px;
+	color: #2a80b9 !important;
+	font-size: 20px;
+	box-shadow: 0px 0px 3px #3d3d3d;
+	border-radius: 3px;
+}
+#done button
+{
+	background-color: #fff !important;
+	color: #2a80b9 !important;
+}
+.dre{
+   position:relative;
+}
+button{
+   position:absolute; right:0; top:-0.2;
+   color: #fff;
+}
+.cardholder
+{
+	padding: 5px;
+}
+.spacer
+{
+	margin-top:20px;
+}	
+#do
+{
+	font-size: 30px;
+}
