@@ -5,14 +5,18 @@ $(document).ready(function(){
 	  x = localStorage.getItem("xval");
 	  flag=0;
 
-	for (i=1;i<=x;i=parseInt(i)+1)
+	  for (i=1;i<=x;i=parseInt(i)+1)
 		{
 			if(localStorage.getItem("x"+i))
 			{
 				var dinp=localStorage.getItem("x"+i);
 	    		var dcol=localStorage.getItem("x"+i+"col");
 	    		var dinfo = crediv(i,dcol,dinp);
-	    		$('#conheader').append(dinfo);
+	    		
+	    		if(localStorage.getItem("x"+i+"pla")=="todo")
+	    			$('#conheader').append(dinfo);
+	    		else
+	    			$('#done').append(dinfo);
 	    		flag=1;
 			}
 
@@ -42,7 +46,8 @@ $(document).ready(function(){
 	    $("#usr").val("");
 
 	    localStorage.setItem("x"+x,inp);
-	    localStorage.setItem("x"+x+"col",col[rno]);    
+	    localStorage.setItem("x"+x+"col",col[rno]); 
+	    localStorage.setItem("x"+x+"pla","todo");   
 	    x=parseInt(x)+1;
 	    localStorage.setItem("xval",x);
  
@@ -78,5 +83,5 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-  	  
+    localStorage.setItem(data+"pla","done"); 
 }
