@@ -1,10 +1,9 @@
 $(document).ready(function(){
 
-
-
 	if(localStorage.getItem("xval")){
 
 	  x = localStorage.getItem("xval");
+	  flag=0;
 
 		for (i=1;i<=x;i=parseInt(i)+1)
 		{
@@ -14,16 +13,19 @@ $(document).ready(function(){
 	    		var dcol=localStorage.getItem("x"+i+"col");
 	    		var dinfo = crediv(i,dcol,dinp);
 	    		$('#conheader').append(dinfo);
+	    		flag=1;
 			}
 
 		}
+
+	  if(flag==0)
+	  	x=1;
 
 	}
 	else
 	{
 	  x=1;	
 	}
-
 	
 	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#16a085','#d35400','#e74c3c','#1abc9c','#8e44ad','#7f8c8d'];
 	
@@ -38,10 +40,10 @@ $(document).ready(function(){
 	    $('#x'+x).addClass('animated bounceInLeft');
 	    $("#usr").val("");
 
+	    localStorage.setItem("x"+x,inp);
+	    localStorage.setItem("x"+x+"col",col[rno]);    
 	    x=parseInt(x)+1;
 	    localStorage.setItem("xval",x);
-	    localStorage.setItem("x"+i,inp);
-	    localStorage.setItem("x"+i+"col",col[rno]);
  
 	    return false;  
 
@@ -76,4 +78,5 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+    alert(data);
 }
