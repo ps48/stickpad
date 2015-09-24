@@ -1,9 +1,17 @@
 $(document).ready(function(){
 
-	if(localStorage.getItem("xval")){
+/*	if(localStorage.getItem("xval")){
 
-		$('#conheader').append(localStorage.getItem(""));
-	}
+		var xval = localStorage.getItem("xval");
+
+		for (i=1;i<=xval;i++)
+		{
+			if(localStorage.getItem(""));
+
+		}
+	}*/
+
+	
 
 	var x=1;
 	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#16a085','#d35400','#e74c3c','#1abc9c','#8e44ad','#7f8c8d'];
@@ -12,18 +20,16 @@ $(document).ready(function(){
 	  if (e.which == 13) {
 
 	  	var rno = Math.floor(Math.random()*(10));
+	  	var inp = $('#usr').val();
+	  	var txt1=crediv(x,col[rno],inp);
 
-	  	var txt="<div id=x"+x+" class='cardholder dre' draggable='true' ondragstart='drag(event)' style='background-color:"
-	  			+col[rno]+"' >"+$('#usr').val()+"<button class='pre' id='"+x+"' onclick='func(this.id)' style='background-color:"
-	  			+col[rno]+"; border:transparent!important;'>x</button></div>";
-
-	    $('#conheader').append(txt);
+	    $('#conheader').append(txt1);
 	    $('#x'+x).addClass('animated bounceInLeft');
 	    $("#usr").val("");
 
-
 	    x=x+1;
-	    localStorage.setItem("xval",x);
+	  //  localStorage.setItem("xval",x);
+
 
 	    
 	    return false;  
@@ -31,10 +37,15 @@ $(document).ready(function(){
 	  }
 	});
 
-
-
-
 });
+
+function crediv(x, col, valu)
+	{
+		var temp="<div id=x"+x+" class='cardholder dre' draggable='true' ondragstart='drag(event)' style='background-color:"
+		  			+col+"' >"+valu+"<button class='pre' id='"+x+"' onclick='func(this.id)' style='background-color:"
+		  			+col+"; border:transparent!important;'>x</button></div>";
+		return temp;
+	}	
 
 function func(x){
 		$('#x'+x).addClass('animated flipOutX').remove();
