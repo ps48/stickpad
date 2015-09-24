@@ -50,8 +50,6 @@ html,body
 	float: left;
 	color:#FFF;
 	margin: 10px;
-	box-shadow: 0px 0px 3px #3d3d3d;
-	border-radius: 3px;
 	cursor: pointer;
 }
 #done .cardholder
