@@ -5,7 +5,7 @@ $(document).ready(function(){
 	  x = localStorage.getItem("xval");
 	  flag=0;
 
-		for (i=1;i<=x;i=parseInt(i)+1)
+	for (i=1;i<=x;i=parseInt(i)+1)
 		{
 			if(localStorage.getItem("x"+i))
 			{
@@ -28,6 +28,7 @@ $(document).ready(function(){
 	}
 	
 	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#16a085','#d35400','#e74c3c','#1abc9c','#8e44ad','#7f8c8d'];
+	var anim=['flipInY','wobble','tada','bounce','lightSpeedIn','slideInLeft','zoomInLeft','rollIn','shake','fadeInLeft'];
 	
 	$('input').keypress(function (e) {
 	  if (e.which == 13) {
@@ -37,7 +38,7 @@ $(document).ready(function(){
 	  	var txt1=crediv(x,col[rno],inp);
 
 	    $('#conheader').append(txt1);
-	    $('#x'+x).addClass('animated bounceInLeft');
+	    $('#x'+x).addClass('animated '+anim[rno]);
 	    $("#usr").val("");
 
 	    localStorage.setItem("x"+x,inp);
@@ -52,19 +53,18 @@ $(document).ready(function(){
 
 });
 
-function crediv(x, col, valu)
-	{
+function crediv(x, col, valu){
 		var temp="<div id=x"+x+" class='cardholder dre' draggable='true' ondragstart='drag(event)' style='background-color:"
 		  			+col+"' >"+valu+"<button class='pre' id='"+x+"' onclick='func(this.id)' style='background-color:"
 		  			+col+"; border:transparent!important;'>x</button></div>";
 		return temp;
-	}	
+}	
 
 function func(x){
 		$('#x'+x).addClass('animated flipOutX').remove();
 		localStorage.removeItem("x"+x);
 		localStorage.removeItem("x"+x+"col");
-	}
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -78,5 +78,5 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-    alert(data);
+  	  
 }
