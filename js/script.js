@@ -39,17 +39,26 @@ $(document).ready(function(){
 
 	  	var rno = Math.floor(Math.random()*(10));
 	  	var inp = $('#usr').val();
-	  	var txt1=crediv(x,col[rno],inp);
 
-	    $('#conheader').append(txt1);
-	    $('#x'+x).addClass('animated '+anim[rno]);
-	    $("#usr").val("");
+	  	if(inp=="")
+	  	{
+	  		$('#usr').addClass("has-error");
+	  	}
+	  	else
+	  	{
+	  		var txt1=crediv(x,col[rno],inp);
 
-	    localStorage.setItem("x"+x,inp);
-	    localStorage.setItem("x"+x+"col",col[rno]); 
-	    localStorage.setItem("x"+x+"pla","todo");   
-	    x=parseInt(x)+1;
-	    localStorage.setItem("xval",x);
+		    $('#conheader').append(txt1);
+		    $('#x'+x).addClass('animated '+anim[rno]);
+		    $("#usr").val("");
+
+		    localStorage.setItem("x"+x,inp);
+		    localStorage.setItem("x"+x+"col",col[rno]); 
+		    localStorage.setItem("x"+x+"pla","todo");   
+		    x=parseInt(x)+1;
+		    localStorage.setItem("xval",x);
+	  	}
+	  	
  
 	    return false;  
 
