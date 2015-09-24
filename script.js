@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
+
+
 	if(localStorage.getItem("xval")){
 
 	  x = localStorage.getItem("xval");
 
-		for (i=1;i<=x;i++)
+		for (i=1;i<=x;i=parseInt(i)+1)
 		{
 			if(localStorage.getItem("x"+i))
 			{
@@ -36,7 +38,7 @@ $(document).ready(function(){
 	    $('#x'+x).addClass('animated bounceInLeft');
 	    $("#usr").val("");
 
-	    x=x+1;
+	    x=parseInt(x)+1;
 	    localStorage.setItem("xval",x);
 	    localStorage.setItem("x"+i,inp);
 	    localStorage.setItem("x"+i+"col",col[rno]);
@@ -58,8 +60,8 @@ function crediv(x, col, valu)
 
 function func(x){
 		$('#x'+x).addClass('animated flipOutX').remove();
-		localStorage.removeItem("x"+i);
-		localStorage.removeItem("x"+i+"col");
+		localStorage.removeItem("x"+x);
+		localStorage.removeItem("x"+x+"col");
 	}
 
 function allowDrop(ev) {
