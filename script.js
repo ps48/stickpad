@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-	if(localStorage.getItem("con"))
-	{
-		$('#conheader').append(localStorage.getItem("con"));
+	if(localStorage.getItem("xval")){
+
+		$('#conheader').append(localStorage.getItem(""));
 	}
 
 	var x=1;
-	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#2c3e50','#d35400','#e74c3c','#1abc9c','#2c3e50','#7f8c8d'];
+	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#16a085','#d35400','#e74c3c','#1abc9c','#8e44ad','#7f8c8d'];
 	
 	$('input').keypress(function (e) {
 	  if (e.which == 13) {
@@ -21,10 +21,11 @@ $(document).ready(function(){
 	    $('#x'+x).addClass('animated bounceInLeft');
 	    $("#usr").val("");
 
-	    var temp=localStorage.getItem("con");
-	    localStorage.setItem("con",temp+txt );
 
-	     x=x+1;
+	    x=x+1;
+	    localStorage.setItem("xval",x);
+
+	    
 	    return false;  
 
 	  }
@@ -36,10 +37,7 @@ $(document).ready(function(){
 });
 
 function func(x){
-
 		$('#x'+x).addClass('animated flipOutX').remove();
-
-
 	}
 
 function allowDrop(ev) {

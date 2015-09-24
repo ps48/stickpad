@@ -2,6 +2,7 @@ html,body
 {
 	margin:auto;
 	padding:0px;
+	background-color: #34495e;
 }
 .center
 {
@@ -33,7 +34,7 @@ html,body
 }
 #header
 {
-	border-bottom: 3px solid rgba(61,61,61,0.8);
+	border-bottom: 3px solid #FFF;
 }
 #usr
 {
@@ -41,7 +42,11 @@ html,body
 }
 #done
 {
-	background-color: #f7f7f7; 
+	background-color: #2B3C4E; 
+}
+#content
+{
+	margin-top: 15px;
 }
 #conheader .cardholder
 {
@@ -61,8 +66,6 @@ html,body
 	margin: 10px;
 	color: #2a80b9 !important;
 	font-size: 20px;
-	box-shadow: 0px 0px 3px #3d3d3d;
-	border-radius: 3px;
 }
 #done button
 {
@@ -83,7 +86,12 @@ button{
 .spacer
 {
 	margin-top:20px;
-}	
+}
+.ip
+{
+	border-radius: 0px;
+	box-shadow: 2px 3px 1px rgba(0,0,0,0.7);
+}
 #do
 {
 	font-size: 30px;
