@@ -1,19 +1,28 @@
 $(document).ready(function(){
 
-/*	if(localStorage.getItem("xval")){
+	if(localStorage.getItem("xval")){
 
-		var xval = localStorage.getItem("xval");
+	  x = localStorage.getItem("xval");
 
-		for (i=1;i<=xval;i++)
+		for (i=1;i<=x;i++)
 		{
-			if(localStorage.getItem(""));
+			if(localStorage.getItem("x"+i))
+			{
+				var dinp=localStorage.getItem("x"+i);
+	    		var dcol=localStorage.getItem("x"+i+"col");
+	    		var dinfo = crediv(i,dcol,dinp);
+	    		$('#conheader').append(dinfo);
+			}
 
 		}
-	}*/
+
+	}
+	else
+	{
+	  x=1;	
+	}
 
 	
-
-	var x=1;
 	var col=['#3498db','#2ecc71','#e67e22','#c0392b','#16a085','#d35400','#e74c3c','#1abc9c','#8e44ad','#7f8c8d'];
 	
 	$('input').keypress(function (e) {
@@ -28,10 +37,10 @@ $(document).ready(function(){
 	    $("#usr").val("");
 
 	    x=x+1;
-	  //  localStorage.setItem("xval",x);
-
-
-	    
+	    localStorage.setItem("xval",x);
+	    localStorage.setItem("x"+i,inp);
+	    localStorage.setItem("x"+i+"col",col[rno]);
+ 
 	    return false;  
 
 	  }
@@ -49,6 +58,8 @@ function crediv(x, col, valu)
 
 function func(x){
 		$('#x'+x).addClass('animated flipOutX').remove();
+		localStorage.removeItem("x"+i);
+		localStorage.removeItem("x"+i+"col");
 	}
 
 function allowDrop(ev) {
