@@ -3,6 +3,8 @@ stickpad
 ##notes on the go!
 ------------------
 
+![site-screenshot](https://github.com/ps48/stickpad/blob/master/screenshots/stickpad.JPG "Screenshot")
+
 ###**Usage Instructions**
 
 - Create a stick note 
